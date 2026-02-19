@@ -45,7 +45,7 @@
 }
 
 html {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 body {
@@ -58,22 +58,16 @@ body {
   gap: 2em;
   grid-template-columns:
     [full-start]
-    1fr
+    0.5fr
     [main-start side-start]
     minmax(min-content, 12em)
     [side-end content-start]
-    minmax(min-content, 36em)
+    minmax(min-content, 40em)
     [main-end content-end]
     1fr
     [full-end];
-  grid-template-rows: auto [content] 0;
+  grid-template-rows: auto;
   margin-bottom: 4em;
-}
-
-body::before {
-  content: '';
-  grid-column: full;
-  grid-row: content;
 }
 
 ol,
@@ -81,7 +75,7 @@ ul {
   padding-left: 1em;
 }
 
-:not(.icon-list, .tag-list) > li + li {
+:not(.icon-list, .tag-list, .circle-rating-list) > li + li {
   margin-top: 0.4em;
 }
 
@@ -166,7 +160,7 @@ svg {
   gap: inherit;
   grid-column: full;
   grid-template-columns: inherit;
-  padding: 4em 0;
+  padding: 3em 0 2em 0;
   text-align: center;
 }
 
@@ -176,7 +170,7 @@ section {
 }
 
 .masthead > img {
-  border: 4px solid;
+  border: 0px solid;
   border-radius: 50%;
   margin: 0 auto;
   max-width: 12em;
@@ -285,7 +279,7 @@ blockquote > * + *,
   }
 
   .grid-list {
-    grid-template-columns: repeat(auto-fit, minmax(calc((100% - 1em) / 2), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(calc((100% - 3em) / 3), 1fr));
   }
 }
 
@@ -298,3 +292,54 @@ time + time-duration::before {
     display: none;
   }
 }
+
+.circle-rating-list {
+  display: flex;
+  margin: 5px 0 0 0;
+  padding: 0;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  border-radius: 50%;
+  list-style: none;
+  border: 2px solid var(--color-accent);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.circle.full:before {
+  content: '';
+  display: block;
+  background: var(--color-accent);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.circle:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+#projects > .stack {
+  margin-bottom: 7em;
+}
+/* #work > h3 {
+  padding-top: 2em;
+}
+#work > .stack{
+  padding-top: 2em;
+} */
