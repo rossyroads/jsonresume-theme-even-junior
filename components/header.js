@@ -45,12 +45,7 @@ export default function Header(basics = {}) {
         `}
         ${url && html`<li>${Icon('link')} ${Link(url)}</li>`}
         ${profiles.map(
-          ({ network, url, username }) => html`
-            <li>
-              ${network && Icon(network, 'user')} ${Link(url, username)}
-              ${network && html`<span class="network">(${network})</span>`}
-            </li>
-          `,
+          ({ network, url, username }) => html` <li>${network && Icon(network, 'user')} ${Link(url, username)}</li> `,
         )}
       </ul>
     </header>

@@ -46,9 +46,10 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "json2ts node_modules/@jsonresume/schema/schema.json schema.d.ts",
+    "NOprebuild": "json2ts node_modules/@jsonresume/schema/schema.json schema.d.ts",
     "build": "vite build",
     "build-editor": "vite build editor",
+    "build-local": "vite build --outDir ./dist/dist && cp package.json dist/package.json && sudo rm -r /home/user/resumed/node_modules/mytheme && sudo cp -r ./dist /home/user/resumed/node_modules/mytheme",
     "dev": "vite serve editor",
     "format": "prettier .",
     "prepare": "husky && npm run build",
@@ -57,6 +58,7 @@
   },
   "dependencies": {
     "@rbardini/html": "^1.0.0",
+    "@types/node": "^25.1.0",
     "feather-icons": "^4.28.0",
     "micromark": "^2.11.0",
     "striptags": "^3.2.0"
