@@ -39,8 +39,8 @@ export default function Resume(resume, { css, js } = {}) {
         </script>`}
       </head>
       <body>
-        ${Header(resume.basics)} ${Work(resume.work)} ${Volunteer(resume.volunteer)} ${Education(resume.education)}
-        ${Projects(resume.projects)} ${Awards(resume.awards)} ${Certificates(resume.certificates)}
+        ${Header(resume.basics)} ${Projects(resume.projects)} ${Work(resume.work)} ${Volunteer(resume.volunteer)}
+        ${Education(resume.education)} ${Awards(resume.awards)} ${Certificates(resume.certificates)}
         ${Publications(resume.publications)} ${Skills(resume.skills)} ${Languages(resume.languages)}
         ${Interests(resume.interests)} ${References(resume.references)}
       </body>
