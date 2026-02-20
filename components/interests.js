@@ -14,7 +14,7 @@ export default function Interests(interests = []) {
           ${interests.map(
             ({ keywords = [], name }) => html`
               <div>
-                ${name && html`<h4>${name}</h4>`}
+                ${name && html`<div class="h5-bold">${name}</div>`}
                 ${keywords.length > 0 &&
                 html`
                   <ul class="tag-list">

@@ -76,7 +76,7 @@ ul {
 }
 
 :not(.icon-list, .tag-list, .circle-rating-list) > li + li {
-  margin-top: 0.4em;
+  margin-top: 0.2em;
 }
 
 li::marker,
@@ -211,6 +211,7 @@ blockquote > * + *,
   gap: 0.4em;
   list-style: none;
   padding: 0;
+  padding-top: 0.5em;
 }
 
 .tag-list > li {
@@ -304,8 +305,8 @@ time + time-duration::before {
 .circle {
   position: relative;
   display: block;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   padding: 2px;
   border-radius: 50%;
   list-style: none;
@@ -334,12 +335,11 @@ time + time-duration::before {
   border-radius: 50%;
 }
 
-#projects > .stack {
-  margin-bottom: 7em;
+#work > .stack {
+  margin-bottom: 4em;
 }
-/* #work > h3 {
-  padding-top: 2em;
+
+.h5-bold {
+  font-weight: bold;
+  font-size: var(--scale1);
 }
-#work > .stack{
-  padding-top: 2em;
-} */
