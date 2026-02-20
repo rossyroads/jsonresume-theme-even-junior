@@ -15,13 +15,14 @@ export default function Education(education = []) {
         <h3>Education</h3>
         <div class="stack">
           ${education.map(
-            ({ area, courses = [], institution, startDate, endDate, studyType, url }) => html`
+            ({ area, courses = [], institution, startDate, endDate, studyType, url, location }) => html`
               <article>
                 <header>
                   <h4>${Link(url, institution)}</h4>
                   <div class="meta">
                     <div>${[studyType, area && html`<strong>${area}</strong>`].filter(Boolean).join(' in ')}</div>
                     ${startDate && html`<div>${DateTimeDuration(startDate, endDate)}</div>`}
+                    ${location && html`<div>${location}</div>`}
                   </div>
                 </header>
                 ${courses.length > 0 &&
